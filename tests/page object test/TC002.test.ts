@@ -3,7 +3,7 @@ import HeaderPage from "../../page/header.page";
 import LoginPage from "../../page/login.page";
 import Env from "../../utils/environment";
 import * as data from "../../data/login.cred.json";
-import { Page } from "playwright";
+import { test, Page,  } from '@playwright/test';
 import ReportUtils from "../../utils/reportUtils";
 
 declare const page: Page;

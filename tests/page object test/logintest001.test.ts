@@ -3,7 +3,7 @@ import HeaderPage from "../../page/header.page";
 import LoginPage from "../../page/login.page";
 import Env from "../../utils/environment";
 import * as data from "../../data/login.cred.json";
-import { Page } from "playwright";
+import { test, expect, Page,  } from '@playwright/test';
 import ReportUtils from "../../utils/reportUtils.ts";
 
 declare const page: Page;
@@ -16,7 +16,7 @@ describe("TC001", () => {
     let login: LoginPage;
     let common: CommonFunctions;
 
-    beforeAll(async () => {
+    test.beforeAll(async () => {
         await page.goto(Env.test);
         header = new HeaderPage(page);
         login = new LoginPage(page);
@@ -65,3 +65,5 @@ describe("TC001", () => {
         await ReportUtils.screenshot("done")
     })
 })
+
+
